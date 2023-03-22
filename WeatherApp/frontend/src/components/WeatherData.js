@@ -47,7 +47,7 @@ const WeatherData = ({entry}) => {
           </li>
           <li style={{paddingLeft:"40px"}}>
             <p>{entry.name}, {entry.state} {entry.country}   <strong>{data.weather[0].description}</strong></p>
-            <p>temperature from {data.main.temp_min} to {data.main.temp_max}, wind {data.wind.speed}m/s humidity {data.main.humidity} pressure {data.main.pressure}</p>
+            <p>temperature from {Math.round(data.main.temp_min)} to {Math.round(data.main.temp_max)}, wind {data.wind.speed}m/s humidity {data.main.humidity} pressure {data.main.pressure}</p>
             <p>Geo coords [{entry.lat},{entry.lon}]</p>
           </li>
         </ul>

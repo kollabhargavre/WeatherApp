@@ -16,7 +16,7 @@ const Item = ({item,entry,setEntry}) => {
         if(response && response.status===200){
             
             setData(response.data)
-            console.log("response data",response.data)
+           
             
         }
     }

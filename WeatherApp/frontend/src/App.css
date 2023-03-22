@@ -15,3 +15,10 @@ body{
     padding: 15px 7px;
     padding-inline: 10px;
 }
+.label{
+    padding-left: 20px;
+}
+
+li{
+    padding-left: 10px;
+}
