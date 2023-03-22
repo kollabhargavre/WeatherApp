@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import AuthContext from '../contexts/AuthContext'
 import api from '../api/Post'
+import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -11,7 +12,18 @@ const Navbar = ({search, setSearch}) => {
     const handleSubmit = async(e)=>{
       e.preventDefault()
       
-      let response = await api.get(`http://api.openweathermap.org/geo/1.0/direct?q=${e.target.searchbar.value}&limit=5&appid=43a977d7984d9afc13b6dedb2d94400b`)
+      // let response = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${e.target.searchbar.value}&limit=5&appid=f3bdfcd643f1f02863931c331b601c8c
+
+      // `)
+      // .catch(err=>console.log(err))
+      // if(response && response.status===200){
+       
+      //   //setResults(response.data)
+      //   console.log("response",response.data)
+      //   //navigate("/results")
+      // }
+
+      let response = await api.get(`/city/${e.target.searchbar.value}`)
       .catch(err=>console.log(err))
       if(response && response.status===200){
        

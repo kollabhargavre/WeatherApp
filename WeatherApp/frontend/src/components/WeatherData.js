@@ -24,7 +24,8 @@ const WeatherData = ({entry}) => {
   
   const [data,setData]=useState(null)
   const getData = async(e)=>{
-      let response =  await api.get(`https://api.openweathermap.org/data/2.5/weather?lat=${entry.lat}&lon=${entry.lon}&appid=43a977d7984d9afc13b6dedb2d94400b`)
+      let response =  await api.get(`https://api.openweathermap.org/data/2.5/weather?lat=${entry.lat}&lon=${entry.lon}&appid=50a73d682d0b9ded8a3e07a3342ec8c4
+      `)
       .catch(err=>console.log(err))
       if(response && response.status===200){
           
