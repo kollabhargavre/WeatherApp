@@ -14,16 +14,17 @@ import About from './components/About';
 function App() {
   let [search, setSearch] = useState('')
   let {results} = useContext(AuthContext)
+  let [entry,setEntry] = useState(null)
 
   return (
     <div className="App">
       <Navbar search={search} setSearch={setSearch}/>
       <Routes>
         <Route path="" element={<About></About>}/>
-        <Route path="entry" element={<PrivateRoute><Home search={search} setSearch={setSearch}/></PrivateRoute>}/>
+        <Route path="/entry" element={<Home entry={entry} setEntry={setEntry}/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
-        <Route path="/results" element={<ListResults results={results}/>}/>
+        <Route path="/results" element={<ListResults results={results} entry={entry} setEntry={setEntry}/>}/>z
       </Routes>
       
     </div>

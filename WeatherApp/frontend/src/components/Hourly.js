@@ -1,3 +1,4 @@
+import { Card } from '@mui/material'
 import React, { useEffect } from 'react'
 import api from '../api/Post'
 
@@ -13,7 +14,7 @@ const Hourly = ({search}) => {
     })
     .catch(err=>console.log(err))
     let data = resposne.data
-    console.log("hourlydata",data)
+    
   }
 
   useEffect(()=>{
@@ -21,9 +22,9 @@ const Hourly = ({search}) => {
   },[])
 
   return (
-    <div>
+    <Card>
       This is Hourly forecast
-    </div>
+    </Card>
   )
 }
 

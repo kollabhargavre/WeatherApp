@@ -7,17 +7,17 @@ import Map from '../components/Map'
 import WeatherData from '../components/WeatherData'
 
 
-const Home = ({search,setSearch}) => {
-    
-    
+const Home = ({entry,setEntry}) => {
+
+  
   return (
     <div>
       This is Home Page    
-      <Card>
-        <WeatherData search={search}/>
-        <Map/>
-        <Hourly search={search}/>
-        <FiveDay search={search}/>
+      <Card style={{alignItems:"center"}}>
+        <WeatherData entry={entry}/>
+        <Map entry={entry}/>
+        <Hourly entry={entry}/>
+        {/* <FiveDay entry={entry}/> */}
       </Card>
     </div>
   )
