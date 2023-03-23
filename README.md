@@ -37,7 +37,7 @@ and type npm start to start your frontend
 ```sh
 npm start
 ```
-This app allows you to search for city weather by its name and aslo forcast for next 5 days
+This app allows you to search for city weather by its name and also forcast for next 5 days
 
 Key Features  --------
 
