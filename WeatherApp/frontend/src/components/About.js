@@ -2,9 +2,9 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
-      <p>Welcome to weather Api</P>
-      Enter a city name of your choice to see weather of that Location
+    <div style={{alignItems:"center"}}>
+      <p>Hi welcome to Weather App Api</p>
+      <p>Enter a city name of your choice to see weather of that Location</p>
     </div>
   )
 }

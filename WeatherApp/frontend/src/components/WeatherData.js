@@ -11,9 +11,11 @@ const WeatherData = ({entry}) => {
   const dayInAWeek = new Date().getDay();
 
   const getData = async()=>{
+    console.log("get data called")
      let response = await api.get(`/data?lat=${entry.lat}&lon=${entry.lon}`)
      .catch(err=>console.log(err))
     if(response && response.status===200){
+      console.log("setting data",response.data)
       setData(response.data)
      
     }
@@ -26,8 +28,9 @@ const WeatherData = ({entry}) => {
   
 
   useEffect(()=>{
-    getData()
-},[])
+    getData();
+  },[])
+
   
   
   

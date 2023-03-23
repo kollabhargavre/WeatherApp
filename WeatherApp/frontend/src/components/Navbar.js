@@ -30,6 +30,7 @@ const Navbar = ({search, setSearch}) => {
     
   return (
     <div className="nav-bar">
+      <p>Search for your City</p>
       <form onSubmit={handleSubmit} className="nav-bar form">
         <input type="text" className='searchbar' name="searchbar"  value={search} onChange={(e)=>setSearch(e.target.value)}/>
         
