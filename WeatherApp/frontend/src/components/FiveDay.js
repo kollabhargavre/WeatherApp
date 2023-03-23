@@ -27,15 +27,24 @@ const FiveDay = ({entry}) => {
         const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(WEEK_DAYS.slice(0, dayInAWeek));
         
         const [data,setData]=useState(null)
+        // const getData = async(e)=>{
+        //     let response =  await api.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${entry.lat}&lon=${entry.lon}&exclude=current,minutely,hourly,alerts&appid=43a977d7984d9afc13b6dedb2d94400b
+        //     `)
+        //     .catch(err=>console.log(err))
+        //     if(response && response.status===200){
+        //         console.log("fivesays",response.data)
+        //         setData(response.data)
+        //     }
+        // }
         const getData = async(e)=>{
-            let response =  await api.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${entry.lat}&lon=${entry.lon}&exclude=current,minutely,hourly,alerts&appid=43a977d7984d9afc13b6dedb2d94400b
-            `)
-            .catch(err=>console.log(err))
-            if(response && response.status===200){
-                console.log("fivesays",response.data)
-                setData(response.data)
-            }
-        }
+          let response =  await api.get(`/daily/?lat=${entry.lat}&lon=${entry.lon}
+          `)
+          .catch(err=>console.log(err))
+          if(response && response.status===200){
+              
+              setData(response.data)
+          }
+      }
 
         useEffect(()=>{
             getData();  

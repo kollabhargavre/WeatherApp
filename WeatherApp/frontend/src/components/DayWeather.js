@@ -19,7 +19,7 @@ const DayWeather = ({item,day}) => {
                 <label  className="label day">{day}</label>
                 <label className="label description">{item.weather[0].description}</label>
                 <img src={`http://openweathermap.org/img/w/${item.weather[0].icon}.png`}/>
-                <label className="label min-max">{Math.round(item.temp.max)}°C /{Math.round(item.temp.min)}°C</label>  
+                <label className="label min-max">{Math.round(item.temp.max)}°K /{Math.round(item.temp.min)}°K</label>  
                 <label className="label">{expand?<button  onClick={handleClick}>Close</button>:<button onClick={handleClick}>Expand</button>}</label>
                 
         </ul>

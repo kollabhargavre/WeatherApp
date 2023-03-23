@@ -60,20 +60,22 @@ def getCity(request,city):
 @api_view(['GET'])
 def data(request):
     if request.method=='GET':
-        print("request.lat",request.lat)
-        # url = 'https://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&appid={API key}'
-        # response = requests.get(url.format(lat,lon)).json()
-        # if not response:
-        #     content = {"No Matcing City"}
-        #     return Response(content,status = status.HTTP_404_NOT_FOUND)
-        
-        return Response("hi")   
+        lat = request.GET.get('lat',None)
+        lon = request.GET.get('lon',None)
+        url = 'https://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&appid=43a977d7984d9afc13b6dedb2d94400b'
+        response = requests.get(url.format(lat,lon)).json()
+        if not response:
+            content = {"No Matcing City"}
+            return Response(content,status = status.HTTP_404_NOT_FOUND)
+        return Response(response,status=status.HTTP_200_OK)   
 
 @api_view(['GET'])
-def hourly(request):
-    return Response('hourly')
-
-
-@api_view(['GET'])
-def getfivedays(request):
-    return Response("fivedays")
+def daily(request):
+    lat = request.GET.get('lat',None)
+    lon = request.GET.get('lon',None)
+    url = 'https://api.openweathermap.org/data/3.0/onecall?lat={}&lon={}&exclude=current,minutely,hourly,alerts&appid=43a977d7984d9afc13b6dedb2d94400b'
+    response = requests.get(url.format(lat,lon)).json()
+    if not response:
+        content = {"Something wrong with api call"}
+        return Response(content,status=status.HTTP_404_NOT_FOUND)
+    return Response(response,status=status.HTTP_200_OK)

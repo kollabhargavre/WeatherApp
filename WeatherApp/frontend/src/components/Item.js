@@ -10,6 +10,7 @@ const Item = ({item,entry,setEntry}) => {
 
 
     const [data,setData]=useState(null)
+    const [loading,setLoading] = useState(true)
     // const getData = async(e)=>{
     //     let response =  await api.get(`https://api.openweathermap.org/data/2.5/weather?lat=${item.lat}&lon=${item.lon}&appid=50a73d682d0b9ded8a3e07a3342ec8c4
     //     `)
@@ -23,20 +24,31 @@ const Item = ({item,entry,setEntry}) => {
     // }
 
     const getData = async(e)=>{
-      console.log("get radt clicked")
-      let response = await api.get(`/data?lat=${item.lat}&lon=${item.lon}}`)
+
+      
+      let response = await api.get(`/data?lat=${item.lat}&lon=${item.lon}`)
       .catch(err=>console.log(err))
       if(response && response.status===200){
-        console.log("response kugewfuw")
+        
         setData(response.data)
+      }
+      if(loading){
+        setLoading(false)
       }
     }
 
-
     useEffect(()=>{
-        getData(); 
-                  
-    },[])
+      if(loading){
+          getData();
+      }
+      let tenminutes = 10*60*1000;
+      let interval = setInterval(()=>{
+          if(data){
+              getData();
+          }
+      },tenminutes)
+      return ()=>clearInterval(interval)
+  },[loading])
 
     const handleClick=()=>{
       
@@ -48,7 +60,7 @@ const Item = ({item,entry,setEntry}) => {
 
   return (
     <div>
-      {/* {data && <Card className="item">
+      {data && <Card className="item">
         <ul style={{display:"flex",listStyle:"none"}}>
           <li>
             <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`}/>
@@ -61,8 +73,8 @@ const Item = ({item,entry,setEntry}) => {
         </ul>
         <br></br>
       </Card>}
-      {!data && <p>Loading</p>} */}
-      <p>ksdv</p>
+      {!data && <p>Loading</p>}
+      
     </div>
   )
 }

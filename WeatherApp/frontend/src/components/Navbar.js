@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import AuthContext from '../contexts/AuthContext'
 import api from '../api/Post'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const Navbar = ({search, setSearch}) => {
@@ -30,6 +30,9 @@ const Navbar = ({search, setSearch}) => {
         setResults(response.data)
         navigate("/results")
       }
+      else{
+        setResults(null)
+      }
 
     }
     
@@ -39,9 +42,9 @@ const Navbar = ({search, setSearch}) => {
         <input type="text" name="searchbar" value={search} onChange={(e)=>setSearch(e.target.value)}/>
         <input type="submit" value="Search" />
       </form>
-      <input type="button" value={"%c"}/>
-      <input type="button" value={"%dd"}/>
-      {user?<p onClick={logoutUser}>Logout</p>:<p>Login</p>}
+      {/* <input type="button" value={"%c"}/>
+      <input type="button" value={"%dd"}/> */}
+      {user?<p onClick={logoutUser}>Logout</p>:<p><Link to="/login">Login</Link></p>}
     </div>
   )
 }

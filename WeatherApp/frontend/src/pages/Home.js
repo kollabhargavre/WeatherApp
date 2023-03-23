@@ -12,12 +12,13 @@ const Home = ({entry,setEntry}) => {
   
   return (
     <div>
-      This is Home Page    
       <Card style={{alignItems:"center",display:"flex"}}>
-        <WeatherData entry={entry}/>
-        <Map entry={entry}/> 
-        <Hourly entry={entry}/>
-        <FiveDay entry={entry}/> 
+        <table style={{width:"100%"}}>
+          <tr>
+            <td ><WeatherData entry={entry}/></td>
+            <td ><FiveDay entry={entry}/></td>
+          </tr>
+        </table>
       </Card>
     </div>
   )
