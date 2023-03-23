@@ -15,7 +15,7 @@ Now makemigrations and migrate
 python manage.py makemigrations
 ```
 ```sh
-python manage.py migrations
+python manage.py migrate
 ```
 
 Now start your project
