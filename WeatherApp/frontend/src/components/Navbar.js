@@ -37,6 +37,7 @@ const Navbar = ({search, setSearch}) => {
       </form>
       {/* <input type="button" value={"%c"}/>
       <input type="button" value={"%dd"}/> */}
+      <p style={{marginRight:"20px"}}><Link to="/favourites/">Favourites</Link></p>
       {user?<p onClick={logoutUser}>Logout</p>:<p><Link to="/login">Login</Link></p>}
     </div>
   )

@@ -16,6 +16,8 @@ export const AuthProvider = ({children}) =>{
     let [loginMessage,setLoginMessage] = useState('')
     let [loading,setLoading] = useState(true)
     let [results,setResults] = useState([])
+    let [entry,setEntry] = useState(null)
+    let [favourites,setFavourites] = useState([])
    
 
 
@@ -98,7 +100,11 @@ export const AuthProvider = ({children}) =>{
         logoutUser:logoutUser,
         authTokens:authTokens, 
         results:results,
-        setResults:setResults       
+        setResults:setResults  ,
+        entry:entry,
+        setEntry:setEntry,
+        favourites:favourites,
+        setFavourites:setFavourites
     }
     return (
         <AuthContext.Provider value={ContextData}>

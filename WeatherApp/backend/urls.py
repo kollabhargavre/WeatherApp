@@ -14,6 +14,8 @@ urlpatterns = [
     path("city/<str:city>", views.getCity,name="get city"),
     path("register/", views.register,name="register"),
     path("data/",views.data, name="weather_data" ),
-    path("daily/",views.daily, name="daily forcast")
+    path("daily/",views.daily, name="daily forcast"),
+    path("like/",views.like,name="like and dislike"),
+    path("favourites/",views.favourite,name="favouites")
 
 ]
