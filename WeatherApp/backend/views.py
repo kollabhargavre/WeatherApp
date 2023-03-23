@@ -78,4 +78,4 @@ def daily(request):
     if not response:
         content = {"Something wrong with api call"}
         return Response(content,status=status.HTTP_404_NOT_FOUND)
-    return Response(response,status=status.HTTP_200_OK)
+    return Response(response,status=status.HTTP_200_OK) 

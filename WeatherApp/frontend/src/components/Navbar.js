@@ -12,16 +12,7 @@ const Navbar = ({search, setSearch}) => {
     const handleSubmit = async(e)=>{
       e.preventDefault()
       
-      // let response = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${e.target.searchbar.value}&limit=5&appid=f3bdfcd643f1f02863931c331b601c8c
-
-      // `)
-      // .catch(err=>console.log(err))
-      // if(response && response.status===200){
-       
-      //   //setResults(response.data)
-      //   console.log("response",response.data)
-      //   //navigate("/results")
-      // }
+      
 
       let response = await api.get(`/city/${e.target.searchbar.value}`)
       .catch(err=>console.log(err))
@@ -32,6 +23,7 @@ const Navbar = ({search, setSearch}) => {
       }
       else{
         setResults(null)
+        navigate('/results')
       }
 
     }
@@ -39,8 +31,8 @@ const Navbar = ({search, setSearch}) => {
   return (
     <div className="nav-bar">
       <form onSubmit={handleSubmit} className="nav-bar form">
-        <input type="text" name="searchbar" value={search} onChange={(e)=>setSearch(e.target.value)}/>
-        <input type="submit" value="Search" />
+        <input type="text" className='searchbar' name="searchbar"  value={search} onChange={(e)=>setSearch(e.target.value)}/>
+        
       </form>
       {/* <input type="button" value={"%c"}/>
       <input type="button" value={"%dd"}/> */}

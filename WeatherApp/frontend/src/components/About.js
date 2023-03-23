@@ -3,7 +3,8 @@ import React from 'react'
 const About = () => {
   return (
     <div>
-      Welcome to weather Api
+      <p>Welcome to weather Api</P>
+      Enter a city name of your choice to see weather of that Location
     </div>
   )
 }

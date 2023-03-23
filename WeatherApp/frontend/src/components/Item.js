@@ -48,7 +48,7 @@ const Item = ({item,entry,setEntry}) => {
           }
       },tenminutes)
       return ()=>clearInterval(interval)
-  },[loading])
+  },[loading,item])
 
     const handleClick=()=>{
       

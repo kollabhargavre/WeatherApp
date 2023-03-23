@@ -13,7 +13,7 @@ const Home = ({entry,setEntry}) => {
   return (
     <div>
       <Card style={{alignItems:"center",display:"flex"}}>
-        <table style={{width:"100%"}}>
+        <table style={{width:"100%", height:"100%"}}>
           <tr>
             <td ><WeatherData entry={entry}/></td>
             <td ><FiveDay entry={entry}/></td>
