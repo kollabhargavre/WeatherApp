@@ -41,4 +41,7 @@ This app allows you to search for city weather by its name and also forcast for 
 
 Key Features  --------
 
+1.App allows you for search for a city weather and forecast by its name which uses it latitude and logitude positions to find the weather.
+2.Allows you to add places as favourite so that you can easily access next time without much effort
+
 For this project I used JWT TOKEN Based Authentication using package for JWT authentication i.e djangorestframework-simplejwt which provides some features as well as a pluggable token blacklist app.
