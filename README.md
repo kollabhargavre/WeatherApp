@@ -5,7 +5,7 @@ The frontend is done using React and Backend using Django
 To run this Project first install requirements
 
 ```sh
-pip install - r requirments.txt
+pip install - r requirements.txt
 ```
 
 you should have installed all the requirements
